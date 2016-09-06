@@ -54,20 +54,28 @@ public class HW0{
 
                 if (res[i].equals(res[j])==true){
                     delete(res,j,size);
-                    count++;
+                    
                 }
             }
         }
 
-        String[] newRes=new String[size];
+        for(int k=0;k<size;k++){
+
+            if(res[k].equals("x"))count++;
+
+        }
+
+        String[] newRes=new String[size-count];
         i=0;
         for(int k=0;k<size;k++){
         if(res[k].equals("x")==false){
             push(newRes,res[k]);
-
+            
         }
         }
-     
+        int n= size-count;
+        System.out.println("number of permutation="+n );
+        System.out.println(count);
         return newRes;
     }
 
@@ -117,7 +125,7 @@ public class HW0{
 
 public static void main(String[] args)  {
 
-    String[] permutations = printPermutations("abbb");
+    String[] permutations = printPermutations("vsffsb");
     
     for(String p : permutations)
         {
